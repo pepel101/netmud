@@ -1,0 +1,16 @@
+/home/hermeneut/netmud/chatclient/bin/Debug/net5.0/chatclient
+/home/hermeneut/netmud/chatclient/bin/Debug/net5.0/chatclient.deps.json
+/home/hermeneut/netmud/chatclient/bin/Debug/net5.0/chatclient.runtimeconfig.json
+/home/hermeneut/netmud/chatclient/bin/Debug/net5.0/chatclient.runtimeconfig.dev.json
+/home/hermeneut/netmud/chatclient/bin/Debug/net5.0/chatclient.dll
+/home/hermeneut/netmud/chatclient/bin/Debug/net5.0/ref/chatclient.dll
+/home/hermeneut/netmud/chatclient/bin/Debug/net5.0/chatclient.pdb
+/home/hermeneut/netmud/chatclient/obj/Debug/net5.0/chatclient.csproj.AssemblyReference.cache
+/home/hermeneut/netmud/chatclient/obj/Debug/net5.0/chatclient.GeneratedMSBuildEditorConfig.editorconfig
+/home/hermeneut/netmud/chatclient/obj/Debug/net5.0/chatclient.AssemblyInfoInputs.cache
+/home/hermeneut/netmud/chatclient/obj/Debug/net5.0/chatclient.AssemblyInfo.cs
+/home/hermeneut/netmud/chatclient/obj/Debug/net5.0/chatclient.csproj.CoreCompileInputs.cache
+/home/hermeneut/netmud/chatclient/obj/Debug/net5.0/chatclient.dll
+/home/hermeneut/netmud/chatclient/obj/Debug/net5.0/ref/chatclient.dll
+/home/hermeneut/netmud/chatclient/obj/Debug/net5.0/chatclient.pdb
+/home/hermeneut/netmud/chatclient/obj/Debug/net5.0/chatclient.genruntimeconfig.cache

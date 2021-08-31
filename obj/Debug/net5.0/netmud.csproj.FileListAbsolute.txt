@@ -1,0 +1,3 @@
+/home/hermeneut/netmud/obj/Debug/net5.0/netmud.csproj.AssemblyReference.cache
+/home/hermeneut/netmud/obj/Debug/net5.0/netmud.GeneratedMSBuildEditorConfig.editorconfig
+/home/hermeneut/netmud/obj/Debug/net5.0/netmud.csproj.CoreCompileInputs.cache

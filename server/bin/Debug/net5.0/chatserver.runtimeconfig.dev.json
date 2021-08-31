@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/home/hermeneut/.dotnet/store/|arch|/|tfm|",
+      "/home/hermeneut/.nuget/packages"
+    ]
+  }
+}

@@ -1,0 +1,3 @@
+[{"name":"Test 1","area":"_test1","areaID":41,"exits":[{"area":"_test2", "areaID":51,"direction":"east"}],"terrain":0, "clients":[]},
+{"name":"Test 2","area":"_test2","areaID":51,"exits":[], "terrain":1, "clients":[]},
+{"name":"test 3","area":"_test3", "areaID":61,"exits":[], "terrain":0,"clients":[]}]
