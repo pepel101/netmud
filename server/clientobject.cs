@@ -1,6 +1,7 @@
 using System;
 using System.Net.Sockets;
 using System.Text;
+using System.Linq;
  
 namespace server
 {
@@ -12,6 +13,8 @@ namespace server
         TcpClient client;
         ServerObject server; 
         Character character;
+
+        Room room;
         public ClientObject(TcpClient tcpClient, ServerObject serverObject)
         {
             Id = Guid.NewGuid().ToString();
@@ -23,11 +26,14 @@ namespace server
  
         public void Process()
         {
+            Program.world.rooms[0].clients.Add(this);
             try
             {
-                Rooms.Test();
-                Rooms.rooms[0].clients.Add(this);
-                if ((Rooms.rooms[0].clients[0].Id).Equals(this.Id)){Console.WriteLine("added to room"+Rooms.rooms[0].name);}
+                
+                if ((Program.world.rooms[0].clients[0].Id).Equals(this.Id)){
+                    Console.WriteLine("added to room"+Program.world.rooms[0].name);
+                    }
+                this.room = Program.world.rooms[0];
                 Stream = client.GetStream();
                 
                 string message = GetMessage();
@@ -35,7 +41,7 @@ namespace server
  
                 message = userName + " entered the room";
                 
-                server.BroadcastMessage(message, this.Id);
+                server.BroadcastMessage(message, this.Id, this.room);
                 Console.WriteLine(message);
                 
                 while (true)
@@ -43,15 +49,24 @@ namespace server
                     try
                     {
                         message = GetMessage();
+                        var command = message.Split(" ").First();
+                        switch(command){
+                            //case "go":  Program.world.handleMoved(this,this.room.exits[0]);
+                            //break;
+                            //case "say":
+
+                                
+                        }
+
                         message = String.Format("{0}: {1}", userName, message);
                         Console.WriteLine(message);
-                        server.BroadcastMessage(message, this.Id);
+                        server.BroadcastMessage(message, this.Id, this.room);
                     }
                     catch
                     {
                         message = String.Format("{0}: left the chat", userName);
                         Console.WriteLine(message);
-                        server.BroadcastMessage(message, this.Id);
+                        server.BroadcastMessage(message, this.Id, this.room);
                         break;
                     }
                 }
