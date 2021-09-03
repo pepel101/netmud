@@ -10,6 +10,8 @@ namespace server
     {
         static ServerObject server; // сервер
         static Thread listenThread; // потока для прослушивания
+
+        public static World world;
         static void Main(string[] args)
         
         {
@@ -18,14 +20,20 @@ namespace server
             
             try
             {
-                
+                world = new World{};
+                world.initWorld();
 
                 server = new ServerObject();
+                
                 listenThread = new Thread(new ThreadStart(server.Listen));
                 listenThread.Start(); //старт потока
+
                 if (Console.ReadLine().ToLower().Equals("disconnect")){
-                    server.BroadcastMessage("Server closing", "0");
-                    server.Disconnect();
+                    for (int i = 0; i<world.rooms.Count; i++){
+                        server.BroadcastMessage("Server closing", "0", world.rooms[i]);
+                   
+                    }
+                     server.Disconnect();
                 }
             }
             catch (Exception ex)

@@ -10,6 +10,7 @@ namespace server{
         public int areaId{get;set;}
         public string area{get;set;}
         public string direction{get;set;}
+        
 
     }
 }

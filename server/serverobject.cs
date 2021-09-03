@@ -52,14 +52,14 @@ namespace server
         }
  
         
-        protected internal void BroadcastMessage(string message, string id)
+        protected internal void BroadcastMessage(string message, string id, Room room)
         {
             byte[] data = Encoding.UTF8.GetBytes(message);
-            for (int i = 0; i < clients.Count; i++)
+            for (int i = 0; i < room.clients.Count; i++)
             {
-                if (clients[i].Id!= id)
+                if (room.clients[i].Id!= id)
                 {
-                    clients[i].Stream.Write(data, 0, data.Length); 
+                    room.clients[i].Stream.Write(data, 0, data.Length); 
                 }
             }
         }
