@@ -1,10 +1,4 @@
 /home/hermeneut/netmud/server/bin/Debug/net5.0/chatserver
-/home/hermeneut/netmud/server/bin/Debug/net5.0/chatserver.deps.json
-/home/hermeneut/netmud/server/bin/Debug/net5.0/chatserver.runtimeconfig.json
-/home/hermeneut/netmud/server/bin/Debug/net5.0/chatserver.runtimeconfig.dev.json
-/home/hermeneut/netmud/server/bin/Debug/net5.0/chatserver.dll
-/home/hermeneut/netmud/server/bin/Debug/net5.0/ref/chatserver.dll
-/home/hermeneut/netmud/server/bin/Debug/net5.0/chatserver.pdb
 /home/hermeneut/netmud/server/obj/Debug/net5.0/chatserver.csproj.AssemblyReference.cache
 /home/hermeneut/netmud/server/obj/Debug/net5.0/chatserver.GeneratedMSBuildEditorConfig.editorconfig
 /home/hermeneut/netmud/server/obj/Debug/net5.0/chatserver.AssemblyInfoInputs.cache
@@ -13,4 +7,10 @@
 /home/hermeneut/netmud/server/obj/Debug/net5.0/chatserver.dll
 /home/hermeneut/netmud/server/obj/Debug/net5.0/ref/chatserver.dll
 /home/hermeneut/netmud/server/obj/Debug/net5.0/chatserver.pdb
+/home/hermeneut/netmud/server/bin/Debug/net5.0/chatserver.deps.json
+/home/hermeneut/netmud/server/bin/Debug/net5.0/chatserver.runtimeconfig.json
+/home/hermeneut/netmud/server/bin/Debug/net5.0/chatserver.runtimeconfig.dev.json
+/home/hermeneut/netmud/server/bin/Debug/net5.0/chatserver.dll
+/home/hermeneut/netmud/server/bin/Debug/net5.0/ref/chatserver.dll
+/home/hermeneut/netmud/server/bin/Debug/net5.0/chatserver.pdb
 /home/hermeneut/netmud/server/obj/Debug/net5.0/chatserver.genruntimeconfig.cache

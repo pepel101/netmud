@@ -40,7 +40,7 @@ namespace server
  
                     ClientObject clientObject = new ClientObject(tcpClient, this);
                     
-                    Thread clientThread = new Thread(new ThreadStart(clientObject.Process));
+                    Thread clientThread = new Thread(new ThreadStart(clientObject.Handle));
                     clientThread.Start();
                 }
             }
@@ -60,6 +60,14 @@ namespace server
                 if (room.clients[i].Id!= id)
                 {
                     room.clients[i].Stream.Write(data, 0, data.Length); 
+                }
+            }
+        }
+        protected internal void EchoMessage(string message, string id){
+            byte[] data = Encoding.UTF8.GetBytes(message);
+            foreach(var cl in this.clients){
+                if(String.Equals(id,cl.Id)){
+                    cl.Stream.Write(data,0, data.Length);
                 }
             }
         }

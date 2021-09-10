@@ -28,6 +28,8 @@ namespace server{
 
         public List<ClientObject> clients{get;set;}
 
+        
+
     }
 
 

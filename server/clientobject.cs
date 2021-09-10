@@ -14,7 +14,7 @@ namespace server
         ServerObject server; 
         Character character;
 
-        Room room;
+        protected internal Room room;
         public ClientObject(TcpClient tcpClient, ServerObject serverObject)
         {
             Id = Guid.NewGuid().ToString();
@@ -26,7 +26,7 @@ namespace server
  
         public void Process()
         {
-            Program.world.rooms[0].clients.Add(this);
+            
             try
             {
                 
@@ -83,7 +83,63 @@ namespace server
             }
         }
  
-        
+        public void Handle(){
+            try{
+            Program.world.rooms[0].clients.Add(this);
+            this.room = Program.world.rooms[0];
+            Stream = client.GetStream();
+                
+            string message = GetMessage();
+            userName = message;
+ 
+            message = userName + " entered the room";
+                
+            server.BroadcastMessage(message, this.Id, this.room);
+            Console.WriteLine(message);
+
+            while(true){
+                try{
+                    if ((Program.world.rooms[0].clients[0].Id).Equals(this.Id)){
+                    Console.WriteLine("added to room"+Program.world.rooms[0].name);
+                    }
+                    message = GetMessage();
+                    var command = message.Split(" ").First();
+                    var comText = message.Split(" ").Last();
+                        switch(command){
+                            case "go":  
+                                Program.world.handleMoved(this,comText);
+                                Console.WriteLine("added to room"+this.room.name);
+                            break;
+                            case "say":
+                                message = String.Format("{0}: {1}", userName, message);
+                                Console.WriteLine(message);
+                                server.BroadcastMessage(message, this.Id, this.room);
+                            break;
+                            default:
+                                message = "No such command";
+                                server.EchoMessage(message, this.Id);
+                                Console.WriteLine(message);
+                            break;
+
+                                
+                        }
+                }catch{
+                        message = String.Format("{0}: left the chat", userName);
+                        Console.WriteLine(message);
+                        server.BroadcastMessage(message, this.Id, this.room);
+                        break;
+                }
+            }
+            }catch(Exception e){
+                Console.WriteLine(e.Message);
+                
+            }finally{
+                server.RemoveConnection(this.Id);
+                Close();
+            }
+                
+        }
+
         private string GetMessage()
         {
             byte[] data = new byte[64]; 
